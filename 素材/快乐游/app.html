@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"> 
+	<title>Bootstrap 实例 - 标签页（Tab）插件</title>
+	<link rel="stylesheet" href="https://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+	
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			height: 2000px;
+		}
+		.yynav{
+			width:100%;
+			border-bottom: 1px solid #d4d4d4;
+		}
+		.yynav ul{
+			width:990px;
+			height: 88px;
+			list-style: none;
+			margin: 0 auto;
+		}
+		.yynav li{
+			float: left;
+			width:200px;
+			line-height: 88px;
+			font-size: 22px;
+			text-align: center;
+			font-family: "宋体";
+		}
+		.yyz{
+			width:100%;
+			height: 1000px;
+			background-color:#F4f4f4;
+			border-bottom: 1px solid #d4d4d4;
+			overflow:hidden
+		}
+		.yycenter{
+			width:1000px;
+			height: 763px;
+			margin: 120px auto;
+		}
+		.yysj{
+			width:362px;
+			height: 763px;
+			background-image: url(img/app-screen-fc12f19053a6efad68cb0221c2dcbcca.jpg);
+			float: left;
+		}
+		.yywz{
+			width:440px;
+			height:100px;
+			float: right;
+			margin-top: 40px;
+			font-family: "宋体";
+		}
+		.yywz span:nth-child(1){
+			font-size: 46px;
+			display: block;
+			color: #5087FC;
+		}
+		.yywz span:nth-child(2){
+			display: block;
+			color: #5087FC;
+			font-size: 20px;
+		}
+		.yywz1{
+			width:440px;
+			line-height: 30px;
+			float: right;
+			margin-top: 110px;
+			font-size: 20px;
+		}
+		.yybtn{
+			width:440px;
+			height: auto;
+			float: right;
+			margin-top: 110px;
+		}
+		.yybtn span{
+			width:280px;
+			line-height:60px;
+			background: #4C84FC;
+			display: block;
+			text-align: center;
+			border-radius: 5px;
+		}
+		.yybtn a{
+			font-size: 22px;
+			color: #fff;
+			text-decoration: none;
+		}
+	</style>
+	
+	<div class="yynav">
+		<ul>
+			<li id="yycyj" style="margin-left: 20%;">蝉游记</li>
+			<li id="yysc">生辰</li>
+			<li id="yyqqq">氢气球旅行</li>
+		</ul>
+	</div>
+	
+	<div class="yyz" id="yyz1">
+		<div class="yycenter">
+			<div class="yysj"></div>
+			<div class="yywz">
+				<span>蟬遊記</span>
+				<span >
+					「发现旅行之美，保存旅行回忆」
+				</span>
+			</div>
+			<div class="yywz1">
+				<p>
+					说起手机上最赞的游记，那一定是蝉游记。</br>
+					通过蝉游记App，迄今已制作了数十万篇游记。</br>
+					2014年成为苹果零售店iPhone样机示范App!
+				</p>
+			</div>
+			<div class="yybtn">
+				<span><a href="https://itunes.apple.com/cn/app/id559653959?mt=8">iphone下载</a></span>
+				<br/>
+				<span><a href="">Android下载</a></span>
+			</div>
+		</div>
+	</div>
+	
+
+	<div class="yyz" id="yyz2"  style="display: none">
+		<div class="yycenter">
+			<div class="yysj" style="background-position: -420px 0;"></div>
+			<div class="yywz">
+				<span>生辰</span>
+				<span >
+					「老去的彼得·潘，最虐心的正能量App」
+				</span>
+			</div>
+			<div class="yywz1">
+				<p>
+					这是一款关于生、死、心愿的另类的App。</br>
+					有时，生命只是一连串数字。有时，你从相片里看</br>见过去的样子，却几乎忘了自己曾经是个什么样的</br>人。
+				</p>
+			</div>
+			<div class="yybtn">
+				<span><a href="https://itunes.apple.com/app/apple-store/id966489322?mt=8">iphone下载</a></span>
+				<br/>
+				<span><a href="">Android下载</a></span>
+			</div>
+		</div>
+	</div>
+	
+	<div class="yyz" id="yyz3" style="display: none">
+		<div class="yycenter">
+			<div class="yysj" style="background-position: -840px 0;"></div>
+			<div class="yywz">
+				<span>氢气球旅行</span>
+				<span >
+					「自由组合路线，一键生成行程」
+				</span>
+			</div>
+			<div class="yywz1">
+				<p>
+					氢气球提供史上最轻松的行程定制方式！</br>
+					自由组合你中意的经典路线和旅行灵感，一键生成</br>行程，自带地图导航
+				</p>
+			</div>
+			<div class="yybtn">
+				<span><a href="https://itunes.apple.com/cn/app/id1044160004?mt=8">iphone下载</a></span>
+				<br/>
+				<span><a href="">Android下载</a></span>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+	<script type="text/javascript">
+		$(function(){
+			$("#yycyj").click(function(){
+				$("#yyz3").css({"display":"none"})
+				$("#yyz2").css({"display":"none"})
+				$("#yyz1").css({"display":"block"})
+			})
+			
+			$("#yysc").click(function(){
+				$("#yyz1").css({"display":"none"})
+				$("#yyz3").css({"display":"none"})
+				$("#yyz2").css({"display":"block"})
+			})
+			
+			$("#yyqqq").click(function(){
+				$("#yyz1").css({"display":"none"})
+				$("#yyz2").css({"display":"none"})
+				$("#yyz3").css({"display":"block"})
+			})
+		})
+	</script>
+	<script src="js/lib/jquery-1.11.0.js"></script>
+</body>
+</html>

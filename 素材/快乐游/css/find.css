@@ -1,0 +1,36 @@
+*{margin:0;padding:0;}
+html,body{font-family:"宋体";}
+a{text-decoration: none;color:#444444;}
+.qq-container{width:100%;background:#fff;}
+.qq-nav{width:593px;margin:0 auto;}
+.qq-nav>li{padding:14px 7px;margin:0;position: relative;}
+.qq-nav>li>a{color:#444444;font-size:22px;}
+.qq-nav>li>a:hover{background:#fff;}
+.qq-nav>li:nth-of-type(even)>a{color:#eaeaea;cursor: default;}
+.nav-border{display:none;width:90px;height:2px;background:#4c84fc;position: absolute;left:23%;bottom:0;}
+.nav-border-active{display: block;}
+
+.qq-center{background:#fafafa;width:100%;min-height:800px;border-top:1px solid #eaeaea;overflow:hidden;padding:0 110px;}
+.qq-find-ul{width:590px;margin:20px auto;}
+.qq-find-ul>li{margin-right:20px;}
+.qq-find-ul>li>a{display:block;padding:20px 20px;font-size:16px;color:#444444;margin:10px 0;}
+.qq-find-ul .active a{background:#4c84fc;}
+.find-li{position: relative;}
+.find-div{position: absolute;z-index:100;background:#fff;border:1px solid #ededed;display: none;list-style: none;}
+.find-li1:hover .find-div1{display: block;}
+.find-div1{width:670px;height:180px;left:-140px;top:83px;}
+.find-div1>li:nth-of-type(3){background:#eaeaea;}
+.find-div>li{float:left;margin:15px 10px 0 0;width:120px;height:36px;border-radius:10px;}
+.find-div>li>a{display:block;float:left;width:120px;height:36px;font-size:18px;text-align: center;line-height:36px;text-decoration: none;color:#999999;}
+.find-li2:hover .find-div2{display: block;}
+.find-div2{width:670px;height:460px;overflow:auto;left:-284px;top:83px;}
+.find-li3:hover .find-div3{display: block;}
+.find-div3{width:670px;height:460px;left:-444px;top:83px;}
+
+.find-img{width:480px;height:430px;overflow:hidden;background:#fff;border-radius:5px;box-shadow:0 1px 0 0 #ccc;position: relative;float:left;margin:10px;}
+.find-img-head-a{position: absolute;left:205px;top:256px;}
+.find-img-head{width:70px;height:70px;border-radius:50%;}
+.find-img>p{margin-top:54px;font-size:16px;width:100%;text-align: center;}
+.find-img>span{display:block;color:#999999;margin-top:20px;font-size:12px;width:100%;text-align: center;}
+.page-div>a{margin:30px 10px;display: inline-block;padding:3px 10px;text-align: center;border:1px solid #ededed;background:#fff;}
+.page-div .page-active{background:#4c84fc;color:#fff;}

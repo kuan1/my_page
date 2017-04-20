@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="./css/bootstrap-theme.min.css"/>
+		<script src="./js/lib/jquery-1.11.0.js"></script>
+		<script src="./js/lib/bootstrap.min.js"></script>
+		<script src="./js/lib/react.min.js"></script>
+		<script src="./js/lib/react-dom.min.js"></script>
+		<script src="./js/lib/browser.min.js"></script>
+		<script src="./js/app/bottom.js" type="text/babel"></script>
+		<script src="./js/app/top.js" type="text/babel"></script>
+	</head>
+	<style type="text/css">
+		html,body{width:100%;height:100%;background:#FAFAFA}
+		.container{width:1200px;margin:0 auto;}
+		.yy-container{height: 465px;font-size: 24px;text-align: center;padding-top:94px;color: #666;}
+		.yy-container .row{text-align: center;}
+		#yy-name{height:38px;width:522px;outline: none;border:1px solid #666;box-shadow: 0px 0px 3px 0px #666 inset;text-align: center;}
+		.yy-name-input{margin-top:15px;margin-bottom: 20px;}
+		.yy-button .yy-btn{width:120px;height:45px;outline: none;}
+		.yy-button .btn-active{background:#4C84FC;color:#fff}
+	</style>
+	<body>
+			<div id="top"></div>
+			<div class="container yy-container">
+				<div class="row">
+					给游记选取一个名字
+				</div>
+				<div class="row yy-name-input">
+					<input type="text" id="yy-name"/>
+				</div>
+				<div class="row yy-button">
+					<button class="btn yy-btn">下一步</button>
+				</div>
+			</div>
+			<div id="bottom"></div>
+	</body>
+	<script type="text/javascript">
+		$(function(){
+			var yyTravel;
+			$("#yy-name").on("keyup",function(){
+				if($(this).val().trim()){
+					if($(this).val().length>20){
+						$(this).val($(this).val().slice(0,20))
+						alert("不能超过20个汉字")
+					}
+					$(".yy-button .btn").addClass("btn-active")
+				}else{
+					$(".yy-button .btn").removeClass("btn-active")
+				}
+
+			})
+			//点击样式
+			$(".yy-button .btn").on("click",function(){
+				yyTravel=[];
+				var travelTitle =  $("#yy-name").val();
+				localStorage.removeItem("yyTravel")
+				var loginId = localStorage.getItem("loginId");
+				yyTravel.push(JSON.stringify({"travelTitle":travelTitle,"loginId":loginId}))
+				localStorage.setItem("yyTravel",yyTravel)
+
+				console.dir(localStorage.getItem("yyTravel"))
+				if($("#yy-name").val().trim()){
+					window.open("treval.html");
+				}
+
+			})
+		})
+	</script>
+</html>

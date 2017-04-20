@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/swiper-3.4.1.min (1).css"/>
+		<style type="text/css">
+			*{
+				margin:0;padding:0;
+			}
+			.kkzong{width:100%;height:134px;background:#fff;padding:16px 0 20px 0}
+			.kkzong1{width:1200px;height:134px;margin:0 auto;position:relative;}
+			.kkdao{width:1170px;margin:0 auto;overflow:hidden,height:134px;position:relative;}
+			.kXuan{width:900px;height:40px;margin:0 auto;border:0;}
+			.kk1{width:140px;height:40px;margin:0 5px;;text-align:center;}
+			.kkgailan{text-align:center;font-size:12px;line-height:30px;}
+			#kkzuo{width:20px;height:96px;background:#fff;border:1px solid #ccc;text-align:center;line-height:96px;font-size:40px;position:absolute;left:0px;}
+			#kkyou1{width:20px;height:96px;background:#fff;border:1px solid #ccc;text-align:center;line-height:96px;font-size:40px;position:absolute;left:1180px;}
+			#myTab li a{background:#FAFAFA;border:0;border-radius: 5px;color:#666;font-size:16px;}
+			#myTab li a:hover{background:#337AB7;color:#fff;}
+			.Kcontent{width:1000px;margin:30px auto 0;}
+			.kkyou{background:#fff;padding:0;margin:10px;width:48%;}
+			.kteshu{background:#fff;padding:0;margin:10px;width:23%;height:230px}
+			.kend{background:#fff;padding:0;margin:10px;width:48%;height:425px,position:relative;}
+			.kzhong{list-style:none;margin:0 auto;width:250px;margin-top:20px;height:40px;background:#FAFAFA;}
+			.kzhong li{float:left;padding:5px 10px;background:#fff;margin-left:10px}
+			.img{display:block;width:168px;height:104px;padding:2px;border:2px solid #fff;position:relative;}
+			.teshu{border:2px solid blue;}
+			.teshu1{opacity:0;}
+			.img:hover{border:2px solid blue;}
+			.ktou{position:absolute;left:0;top:0;display:block;width:162px;height:97px;background:rgba(250,250,250,0.5);}
+			.ktou:hover{background:rgba(250,250,250,0);}
+			.kfenye{width:300px;height:40px;margin:20px auto 0; }
+			.kfenye li{float:left;list-style: none;margin-left:10px}
+			.kfenye li a{padding:5px 10px;background:#fff;color:#666;text-decoration: none;}
+			.kfenye .active{background:#0000FF;color:#fff;}
+		</style>
+	</head>
+
+	<body>
+		<div id="kk">
+		</div>
+	</body>
+	<script src="js/lib/jquery-1.11.0.js"></script>
+	<script src="js/lib/swiper-3.4.1.jquery.min.js"></script>
+	<script src="js/lib/bootstrap.min.js"></script>
+	<script src="js/lib/react.min.js"></script>
+	<script src="js/lib/react-dom.min.js"></script>
+	<script src="js/lib/browser.min.js"></script>
+	<script type="text/babel">
+		
+		var Dome=React.createClass({
+			getInitialState:function(){
+				return{
+					res:[],
+					res1:[],
+					res2:[],
+					res3:[]
+				}
+			},
+			componentDidMount:function(){
+			var _this =this;
+			$.get('test/test.json',function(v){
+				console.log(v)
+				_this.setState({res:v.data})
+				_this.setState({res1:v.data1})
+				_this.setState({res2:v.data2})
+				_this.setState({res3:v.data3})
+					//console.log(_this.state.res[0].src)
+			})
+			var swiper = new Swiper('.swiper-container', {
+		        scrollbar: '.swiper-scrollbar',
+		        scrollbarHide: true,
+		        slidesPerView: 'auto',
+		        centeredSlides: true,
+		        spaceBetween: 30,
+		        grabCursor: true
+		    });   
+			},
+			render:function(){
+				var sty3 ={
+				aa:{width:'100%',minHeight:'40px',padding:'20px 0',background:'#FAFAFA'},
+				bb:{textAlign:'center',marginTop:'20px',lineHeight:'40px',fontSize:'30px',color:'#000'},
+				bb1:{textAlign:'center',marginTop:'20px',lineHeight:'40px',fontSize:'16px',color:'#000'},
+				cc:{textAlign:'center',lineHeight:'30px',fontSize:'20px'},
+			
+				cc1:{textAlign:'center',lineHeight:'10px',fontSize:'15px',color:'red'},
+				dd:{fontStyle:'normal'},
+				dd1:{display:'block',width:'70px',height:'70px',borderRadius:'50%',position:'absolute',top:"256px",left:"50%",marginLeft:'-35px',overflow:'hidden'},
+				x:{textAlign:'center',lineHeight:'30px',marginTop:"50px",fontSize:"16px"},
+				y:{textAlign:'center',lineHeight:'10px',fontSize:"12px"},
+				z:{width:'100%',height:'100%'}
+			}
+				return(
+				<div className="kkzong">
+				 	<div id="myCarousel" className="carousel slide kkzong1" data-interval="false">
+						<div className="carousel-inner container">
+							<div className="item active row kkdao">															
+								<div className= "col-md-2" >
+									<a href="" className="img teshu">	
+										<img src="img/q1.jpg"  alt=""/>
+										<span className="ktou teshu1"></span>
+									</a>	
+									<p className="kkgailan">日本概览</p>
+								</div>
+								<div className= "col-md-2" >
+									<a href="" className="img">	
+										<img src="img/q2.jpg"  alt=""/>
+										<span className="ktou"></span>
+									</a>	
+									<p className="kkgailan">关西</p>
+								</div>
+								<div className= "col-md-2" >
+									<a href="" className="img">	
+										<img src="img/q3.jpg"  alt=""/>
+										<span className="ktou"></span>
+									</a>	
+									<p className="kkgailan">东京</p>
+								</div>
+								<div className= "col-md-2" >
+									<a href="" className="img">	
+										<img src="img/q4.jpg"  alt=""/>
+										<span className="ktou"></span>
+									</a>	
+									<p className="kkgailan">北海道</p>
+								</div>
+								<div className= "col-md-2"  >
+									<a href="" className="img">	
+										<img src="img/q5.jpg"  alt=""/>
+										<span className="ktou"></span>
+									</a>	
+									<p className="kkgailan">九州</p>
+								</div>
+								<div className= "col-md-2" >
+									<a href="" className="img">	
+										<img src="img/q6.jpg"  alt=""/>
+										<span className="ktou"></span>
+									</a>	
+									<p className="kkgailan">冲绳</p>
+								</div>
+							</div>
+						</div>
+						<div id="kkzuo" onClick={this.tap} className="carousel-control"  
+						   >&lsaquo;</div>
+						<div id="kkyou1" onClick={this.on} className="carousel-control"  
+						   >&rsaquo;</div>
+					</div> 
+					<div style={sty3.aa}>
+						<ul id="myTab" className="nav nav-tabs kXuan">  
+    						<li className="kk1">  
+        						<a href="#A" data-toggle="tab" className="active">  
+       								专题3 
+        						</a>  
+    						</li>  
+    						<li className="kk1">
+    							<a href="#B" data-toggle="tab">
+    							行程7
+    							</a>
+    						</li>
+    						<li className="kk1">
+    							<a href="#C" data-toggle="tab">
+    							旅游地572
+    							</a>
+    						</li>
+    						<li className="kk1">
+    							<a href="#D" data-toggle="tab">
+    							游记3095
+    							</a>
+    						</li>
+						</ul>  
+						<div id="myTabContent" className="tab-content ">  
+						    <div className="tab-pane fade in active" id="A">  
+						      <div className="container Kcontent">
+						       		<div className="row">
+						       			{
+						       				this.state.res.map(function(r){
+						       					return(
+						       						<div className="col-md-2 kkyou">
+						       							<a href="#">
+						       								<img src={r.src}/>
+						       							</a>
+									       				<p style={sty3.bb}>{r.a}</p>
+									       				<p style={sty3.cc}>{r.b}</p>
+						       						</div>
+						       					)
+						       				})
+						       				
+						       			}
+						       			
+						       		</div>
+						        </div>  			        
+						    </div>  
+						    <div className="tab-pane fade in " id="B">  
+						      <div className="container Kcontent">
+						       		<div className="row">
+						       			{
+						       				this.state.res1.map(function(r){
+						       					return(
+						       						<div className="col-md-6 kkyou">
+						       							<a href="#">
+						       								<img src={r.src}/>
+						       							</a>
+									       				<p style={sty3.bb}>{r.a}</p>
+									       				<p style={sty3.cc}>{r.b}</p>
+						       						</div>
+						       					)
+						       				})
+						       				
+						       			}
+						       			
+						       		</div>
+						        </div>  			        
+						    </div>  
+						    <div className="tab-pane fade in " id="C">  
+						      <div className="container Kcontent">
+						       		<div className="row">
+						       			{
+						       				this.state.res2.map(function(r){
+						       					return(
+						       						<div className="col-md-3 kkyou kteshu">
+						       							<a href="#">
+						       								<img src={r.src}/>
+						       							</a>
+									       				<p style={sty3.bb1}>{r.a}</p>
+									       				<p style={sty3.cc1}>
+									       					<i style={sty3.dd}>{r.b}</i>
+									       					<i style={sty3.dd}>{r.b}</i>
+									       					<i style={sty3.dd}>{r.b}</i>
+									       					<i style={sty3.dd}>{r.b}</i>
+									       					<i style={sty3.dd}>{r.c}</i>
+									       				</p>
+						       						</div>
+						       					)
+						       				})
+						       				
+						       			}
+						       			
+						       		</div>
+						        </div>  			        
+						    </div>  
+						    <div className="tab-pane fade in " id="D">  
+						      	<div className="container Kcontent">
+						       		<div className="row">
+						       			{
+						       				this.state.res3.map(function(r){
+						       					return(
+						       						<div className="col-md-6 kkyou kend">
+						       							<a href="#">
+						       								<img src={r.src}/>
+						       							</a>
+									       				<p style={sty3.x}>{r.a}</p>
+									       				<p style={sty3.y}>{r.b}</p>
+									       				<a href="#" style={sty3.dd1}>
+									       					<img style={sty3.z} src={r.c} />
+									       				</a>
+						       						</div>
+						       					)
+						       				})
+						       				
+						       			}
+						       			
+						       		</div>
+						        </div>  			        
+						    </div>
+						    <ul className="kfenye">
+								<li><a className="active" href="">1</a></li>
+								<li><a href="">2</a></li>
+								<li><a href="">下一页></a></li>
+								<li><a href="">末页>></a></li>
+							</ul>
+						</div>  
+					</div>
+				</div>
+				) 
+			}
+		})
+	ReactDOM.render(<Dome/>,document.getElementById('kk'));
+	</script>
+</html>

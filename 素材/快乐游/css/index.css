@@ -1,0 +1,28 @@
+html,body{width:100%;height:100%;padding:0;margin:0}
+h1{padding:0;margin:0}
+a{text-decoration: none;}
+#out{padding:0;margin:0;width:100%;height:100%;overflow:hidden;}
+.shifen{background:url('../img/iconbj.png') #000 no-repeat;
+	background-position: 8px -2558px;
+}
+.logo1{width:90px;height:28px;display:block;float:left;}
+.logoh1{position:absolute;left:15px;top:5px}
+.logoh1s{position:absolute;bottom:20px;left:15px;}
+.shifen:hover{background-position: 8px -2593px;}
+
+#fenxiangL:hover .fx1{display:none}
+#fenxiangL:hover .fx2{display:block}
+.fx2{display:none}
+.Fxb1{background:url('../img/zh.png') no-repeat;background-position:10px -100px}
+.Fxb1:hover{background-position:11px -132px;}
+.Fxb2{background:url('../img/zh.png') no-repeat;background-position:10px -168px}
+.Fxb2:hover{background-position:11px 7px;}
+.Fxb3{background:url('../img/zh.png') no-repeat;background-position:10px -36px}
+.Fxb3:hover{background-position:10px -71px;}
+
+/*右侧主体*/
+.show1{overflow: hidden;position:relative;width:100vw;height:100vh;transform:translateX(100vw);transition: all 0.3s linear;}
+.show2{overflow:hidden;width:100vw;height:100vh;transform:translateX(0);transition: all 0.3s linear;}
+/*右侧a标签*/
+.topa1{background:url('../img/iconbj.png') #000 no-repeat;background-position:10px -630px ;}
+.topa1:hover{background:url('../img/iconbj.png') #000  no-repeat;background-position:10px -670px ;}

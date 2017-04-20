@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap-theme.min.css"/>
+		<script src="../js/lib/jquery-1.11.0.js"></script>
+		<script src="../js/lib/bootstrap.min.js"></script>
+		<script src="../js/lib/react.min.js"></script>
+		<script src="../js/lib/react-dom.min.js"></script>
+		<script src="../js/lib/browser.min.js"></script>
+		<style type="text/css">
+
+			.clear{content: ".";height: 0;clear: both; display: block;overflow: hidden; visibility:hidden;}
+			.yy-treval{margin-left:50px;margin-right:20px;position: relative;text-align: center;}
+			.yy-fluilt{height:112px;}
+			.yy-icon li {text-align: center;}
+			.yy-icon .icon-1 span{font-size:44px;line-height: 80px;color:#E8E8E8;display:block;margin:0 auto}
+			.yy-icon .icon-2 span{display:block;height:20px;width:20px;border-radius: 10px;background:#F5F5F5;margin:46px 20px;}
+			.yy-icon .icon-1 .yy-active{color:#4C84FC;}
+
+			#yy-addPic{position: absolute;top:24px;right:27px;height:78px;width:260px;text-align: center;font-size: 12px;line-height: 30px;color: #666666;}
+			.yy-trevalBtn{height:47px; width: 134px;background:#4C84FC;color:#fff;font-size:20px;}
+
+
+			.yy-picture{min-height:300px;background: #F9F9F9;border-top:1px solid #E1E1E1}
+			.yy-treval .row{color:#D0D0D0}
+			.yy-hours{height:50px;line-height: 50px;margin:0 70px;}
+			.yy-hours>div:nth-of-type(1){float:left}
+			.yy-hours>div:nth-of-type(2){float:right}
+			.yy-hours a{text-decoration: none;}
+
+
+
+			.yy-trevalPic{position: relative;background:#fff;min-height: 420px;margin:0px 20px 20px 50px;}
+			.yy-trevalPic .yy-innerPic {min-height: 200px;border-bottom: 1px dashed #ccc;margin:20px;}
+			.yy-trevalPic .yy-innerPosition{margin: 20px;}
+
+
+			.yy-shiqu{padding-top:15px;position:relative;display: none;}
+			.yy-shiqu select{width:200px;height:20px;float: left;}
+			.yy-shiqu .btn{height:20px;width:50px;padding:0;float: left;margin-right: 10px;;}
+			.yy-shiqu .yy-icon01{position:absolute;top:-11px; margin-left:-155% ;z-index: 3;}
+		</style>
+		<title></title>
+	</head>
+	<body>
+		<div class="container-fluid yy-treval">
+			<div class="row yy-fluilt">
+				<div class="col-md-7">
+					<ul class="row nav nav-pills yy-icon">
+						<li class="icon-1 "><span class="glyphicon glyphicon-upload yy-active"></span>上传照片</li>
+						<li class="icon-2"><span></span></li>
+						<li class="icon-1"><span class="glyphicon glyphicon-map-marker"></span>行程修改</li>
+						<li class="icon-2"><span></span></li>
+						<li class="icon-1"><span class="glyphicon glyphicon-th-large"></span>编辑排版</li>
+						<li class="icon-2"><span></span></li>
+						<li class="icon-1"><span class="glyphicon glyphicon-ok-sign"></span>发布游记</li>
+						<li class="icon-2"><span></span></li>
+						<li class="icon-1"><span class="glyphicon glyphicon-print"></span>印制游记</li>
+					</ul>
+				</div>
+			</div>
+			<div id="yy-addPic">
+				<button class="btn yy-trevalBtn" id="yy-add">添加相片</button>
+				<p>还可以上传127张相片，按 “ctrl” 键支持多选</p>
+			</div>
+		</div>
+
+		<!--添加游记信息-->
+		<div class="container-fluid yy-picture" id="yy-out">
+			<div class="row yy-hours">
+				<div><a href="#">+新增前一天</a></div>
+				<div>
+					<a href="javascript:" id="yy-setshiqu">调整相片时区</a>
+					<div class="yy-shiqu">
+						<select name="shiqu">
+							<option value="">北京</option>
+							<option value="">纽约</option>
+							<option value="">伦敦</option>
+							<option value="">动静</option>
+							<option value="">俄罗斯</option>
+						</select>
+						<button class="btn btn-primary">提交</button>
+						<button class="btn">取消</button>
+						<img class="yy-icon01" src="../img/icon01.png"/>
+					</div>
+				</div>
+			</div>
+			<div class="row yy-trevalPic">
+				<div class="row yy-innerPic"></div>
+				<div class="row yy-innerPosition"></div>
+			</div>
+			<div class="row yy-hours">
+				<div class="col-md-6"><a href="#">+新增后一天</a></div>
+			</div>
+		</div>
+	</body>
+	<script type="text/babel">
+		/*var Trevalnopicture = React.createClass({//组件无图时的渲染
+			render:function(){
+				return(
+					<div className="row yy-treval">
+						<h1 className="row">无图无真相</h1>
+						<h3 className="row">推荐上传1600px以上带exif大图，如相机原图</h3>
+					</div>
+				)
+			}
+		})
+		ReactDOM.render(<Trevalnopicture/>,document.getElementById("yy-out"))
+
+
+			//卸载组件
+		document.getElementById("yy-add").onclick = function(){
+			ReactDOM.unmountComponentAtNode(document.getElementById("yy-out"))
+		}*/
+
+		$("#yy-setshiqu").on("click",function(){
+			$(this).css("display","none")
+			$(".yy-shiqu").css("display","block")
+		})
+	</script>
+</html>

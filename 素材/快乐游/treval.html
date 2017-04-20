@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="./css/bootstrap-theme.min.css"/>
+		<script src="./js/lib/jquery-1.11.0.js"></script>
+		<script src="./js/lib/bootstrap.min.js"></script>
+		<script src="./js/lib/react.min.js"></script>
+		<script src="./js/lib/react-dom.min.js"></script>
+		<script src="./js/lib/browser.min.js"></script>
+		<script src="./js/lib/plupload.full.min.js"></script>
+		<script src="./js/app/bottom.js" type="text/babel"></script>
+		<script src="./js/app/top.js" type="text/babel"></script>
+		<style type="text/css">
+
+			.clear{content: ".";height: 0;clear: both; display: block;overflow: hidden; visibility:hidden;}
+			.yy-treval{margin-left:50px;margin-right:20px;position: relative;text-align: center;}
+			.yy-fluilt{height:112px;}
+			.yy-icon li {text-align: center;}
+			.yy-icon .icon-1 span{font-size:44px;line-height: 80px;color:#E8E8E8;display:block;margin:0 auto}
+			.yy-icon .icon-2 span{display:block;height:20px;width:20px;border-radius: 10px;background:#F5F5F5;margin:46px 20px;}
+			.yy-icon .icon-1 .yy-active{color:#4C84FC;}
+
+			#yy-addPic{position: absolute;top:24px;right:27px;height:78px;width:260px;text-align: center;font-size: 12px;line-height: 30px;color: #666666;}
+			.yy-trevalBtn{height:47px; width: 134px;background:#4C84FC;color:#fff;font-size:20px;}
+
+
+			.yy-picture{min-height:300px;background: #F9F9F9;border-top:1px solid #E1E1E1}
+			.yy-treval .row{color:#D0D0D0}
+			.yy-hours{height:50px;line-height: 50px;margin:0 70px;}
+			.yy-hours>div:nth-of-type(1){float:left}
+			.yy-hours>div:nth-of-type(2){float:right}
+			.yy-hours a{text-decoration: none;}
+
+
+
+			.yy-trevalPic{position: relative;background:#fff;min-height: 420px;margin:0px 20px 20px 50px;}
+			.yy-trevalPic .yy-innerPic {min-height: 200px;border-bottom: 1px dashed #ccc;margin:20px;display: flex;justify-content: flex-start ;align-items: flex-start;align-content: flex-start;flex-wrap: wrap;}
+			.yy-innerPic >div{height:170px;width:150px;margin-right:20px;line-height: 20px;overflow: hidden;}
+			.yy-innerPic img{width:150px;height:150px;}
+			.yy-trevalPic .yy-innerPosition{margin: 20px;min-height: 200px;}
+
+
+			.yy-shiqu{padding-top:15px;position:relative;display: none;}
+			.yy-shiqu select{width:200px;height:20px;float: left;}
+			.yy-shiqu .btn{height:20px;width:50px;padding:0;float: left;margin-right: 10px;;}
+			.yy-shiqu .yy-icon01{position:absolute;top:-11px; margin-left:-155% ;z-index: 3;}
+
+			.yy-day01{height:150px;width:150px;border: 1px solid #ccc;float: left;margin-right: 10px;}
+
+
+			.yy-position{height:100px;width:100px;line-height: 100px;font-size: 20px;border: 1px solid #ccc;background:#C0C0C0;text-align: center;}
+			.yy-module{height:500px;width:600px;}
+			.yy-module>div{height:500px;width:600px;}
+			.jiudian{height:498px;width:80px;padding-top:40px;background: #EEEEEE;}
+			.jiudian >div{height:40px;width:80px;text-align: center;line-height: 40px;font-size: 16px;background:#EEEEEE; }
+		</style>
+		<title></title>
+	</head>
+	<body>
+		<!--头部样式-->
+		<div id="top">
+
+		</div>
+
+
+		<div class="container-fluid yy-treval">
+			<div class="row yy-fluilt">
+				<div class="col-md-7">
+					<ul class="row nav nav-pills yy-icon">
+						<li class="icon-1 "><span class="glyphicon glyphicon-upload yy-active"></span>上传照片</li>
+						<li class="icon-2"><span></span></li>
+						<li class="icon-1"><span class="glyphicon glyphicon-map-marker"></span>行程修改</li>
+						<li class="icon-2"><span></span></li>
+						<li class="icon-1"><span class="glyphicon glyphicon-th-large"></span>编辑排版</li>
+						<li class="icon-2"><span></span></li>
+						<li class="icon-1"><span class="glyphicon glyphicon-ok-sign"></span>发布游记</li>
+						<li class="icon-2"><span></span></li>
+						<li class="icon-1"><span class="glyphicon glyphicon-print"></span>印制游记</li>
+					</ul>
+				</div>
+			</div>
+			<div id="yy-addPic">
+				<button class="btn yy-trevalBtn" id="yy-add">添加相片</button>
+				<p>还可以上传127张相片，按 “ctrl” 键支持多选</p>
+			</div>
+		</div>
+
+		<!--添加游记信息-->
+		<div class="container-fluid yy-picture" id="yy-out">
+
+		</div>
+
+
+
+		<!--底部信息-->
+		<div id="bottom">
+
+		</div>
+	</body>
+	<script type="text/babel">
+		var Trevalnopicture = React.createClass({//组件无图时的渲染
+			render:function(){
+				return(
+					<div className="row yy-treval">
+						<h1 className="row">无图无真相</h1>
+						<h3 className="row">推荐上传1600px以上带exif大图，如相机原图</h3>
+					</div>
+				)
+			}
+		})
+		ReactDOM.render(<Trevalnopicture/>,document.getElementById("yy-out"))
+
+
+
+
+		var Trevaladdpicture = React.createClass({//组件添加图拍呢时的渲染
+			tap:function(){
+				$("#yy-setshiqu").css("display","none")
+				$(".yy-shiqu").css("display","block")
+			},
+			yinchang:function(){
+				$("#yy-setshiqu").css("display","block")
+				$(".yy-shiqu").css("display","none")
+			},
+			addDayPic:function(){
+				alert("添加")
+				$("#dayPicture").append(<TrevalPicture/>)
+			},
+			render:function(){
+				return(
+					<div>
+						<div className="row yy-hours">
+							<div><a href="#">+新增前一天</a></div>
+							<div>
+								<a href="javascript:" id="yy-setshiqu" onClick={this.tap}>调整相片时区</a>
+								<div className="yy-shiqu">
+									<select name="shiqu">
+										<option value="">北京</option>
+										<option value="">纽约</option>
+										<option value="">伦敦</option>
+										<option value="">动静</option>
+										<option value="">俄罗斯</option>
+									</select>
+									<button className="btn btn-primary">提交</button>
+									<button className="btn" onClick={this.yinchang}>取消</button>
+									<img className="yy-icon01" src="./img/icon01.png"/>
+								</div>
+							</div>
+						</div>
+							{/**图片位子显示组件**/}
+						<div id="dayPicture">
+							<TrevalPicture/>
+						</div>
+
+						<div className="row yy-hours">
+							<div className="col-md-6"><a href="javascript:" onClick={this.addDayPic} >+新增后一天</a></div>
+						</div>
+					</div>
+				)
+			}
+		})
+
+
+		{/**组件无图时的渲染**/}
+		var TrevalPicture = React.createClass({
+			getInitialState:function(){
+				return{
+					res:{"background":"#eee"}
+				}
+			},
+			tap:function(e){
+				var tar = e.target.style
+
+				this.setState({res:{"background":"#fff"}})
+			},
+
+			render:function(){
+				var sty1={"background":"#eee"}
+				return(
+					<div className="row yy-trevalPic">
+						<div className="row yy-innerPic" id="yy-innerPic">
+							{/**照片位置添加处**/}
+						</div>
+						<div className="row yy-innerPosition">
+							<div type ="btn" className="yy-position btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm" >
+								添加位置
+							</div>
+							<div className="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+							  <div className="modal-dialog modal-sm yy-module" role="document">
+							    <div className="modal-content">
+							    		<div className="jiudian" id="yy-jiudian">
+							    			<div onClick={this.tap} style={sty1}>地点</div>
+							    			<div onClick={this.tap} style={sty1}>酒店</div>
+							    		</div>
+							    </div>
+							  </div>
+							</div>
+						</div>
+					</div>
+				)
+			}
+		})
+
+		//卸载组件
+
+
+		document.getElementById("yy-add").onclick = function(){
+			if(this.textContent == "添加相片"){
+				ReactDOM.unmountComponentAtNode(document.getElementById("yy-out"))
+				ReactDOM.render(<Trevaladdpicture/>,document.getElementById("yy-out"))
+				this.textContent = "继续增加"
+			}
+		}
+
+
+
+
+
+
+
+		/*$("#yy-setshiqu").on("click",function(){
+			$(this).css("display","none")
+			$(".yy-shiqu").css("display","block")
+		})
+		$(".yy-shiqu .btn").on("click",function(){
+			$("#yy-setshiqu").css("display","block")
+			$(".yy-shiqu").css("display","none")
+		})*/
+
+
+
+		//选择图片上传
+		 //实例化一个plupload上传对象
+    var uploader = new plupload.Uploader({ //实例化一个plupload上传对象
+        browse_button : 'yy-add',
+        url : 'treval.html',
+        flash_swf_url : 'js/Moxie.swf',
+        silverlight_xap_url : 'js/Moxie.xap',
+        filters: {
+          mime_types : [ //只允许上传图片文件
+            { title : "图片文件", extensions : "jpg,gif,png" }
+          ]
+        }
+    });
+    uploader.init(); //初始化
+
+    //绑定文件添加进队列事件
+    uploader.bind('FilesAdded',function(uploader,files){
+        for(var i = 0, len = files.length; i<len; i++){
+            var file_name = files[i].name; //文件名
+            //构造html来更新UI
+            var html = '<div id="file-' + files[i].id +'"><p class="file-name">' + file_name + '</p></div>';
+            $(html).appendTo('#yy-innerPic');
+            !function(i){
+                previewImage(files[i],function(imgsrc){
+                    $('#file-'+files[i].id).children().prepend('<img src="'+ imgsrc +'" />');
+                })
+            }(i);
+        }
+    });
+
+    //plupload中为我们提供了mOxie对象
+    //有关mOxie的介绍和说明请看：https://github.com/moxiecode/moxie/wiki/API
+    //如果你不想了解那么多的话，那就照抄本示例的代码来得到预览的图片吧
+    function previewImage(file,callback){//file为plupload事件监听函数参数中的file对象,callback为预览图片准备完成的回调函数
+        if(!file || !/image\//.test(file.type)) return; //确保文件是图片
+        if(file.type=='image/gif'){//gif使用FileReader进行预览,因为mOxie.Image只支持jpg和png
+            var fr = new mOxie.FileReader();
+            fr.onload = function(){
+                callback(fr.result);
+                fr.destroy();
+                fr = null;
+            }
+            fr.readAsDataURL(file.getSource());
+        }else{
+            var preloader = new mOxie.Image();
+            preloader.onload = function() {
+                preloader.downsize( 300, 300 );//先压缩一下要预览的图片,宽300，高300
+                var imgsrc = preloader.type=='image/jpeg' ? preloader.getAsDataURL('image/jpeg',80) : preloader.getAsDataURL(); //得到图片src,实质为一个base64编码的数据
+                callback && callback(imgsrc); //callback传入的参数为预览图片的url
+                preloader.destroy();
+                preloader = null;
+            };
+            preloader.load( file.getSource() );
+        }
+    }
+
+
+	</script>
+</html>
